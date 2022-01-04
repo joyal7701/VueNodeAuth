@@ -119,6 +119,8 @@ passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
+//deserializeUser() functions. Passport.serialize and passport.deserialize are used to set id as a cookie in. the user's browser and to get the id from the cookie when it then used to get user info in a callback.
+
 passport.deserializeUser((id, done) => {
   let user = users.find((user) => {
     return user.id === id;
